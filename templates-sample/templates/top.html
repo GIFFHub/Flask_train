@@ -1,0 +1,23 @@
+
+{% extends "base.html" %}
+
+
+{% block title %}TOP{% endblock %}
+
+
+{% block header %}<h1>トップ：画面</h1>{% endblock %}
+
+
+{% block content %}
+    <a href="{{ url_for('item_list')}}">To list</a><br>
+    <a href="{{ url_for('show_jinja_multiple')}}">To multi</a><br>
+    <a href="{{ url_for('show_jinja_dict')}}">To dict</a><br>
+    <a href="{{ url_for('show_jinja_list')}}">To list2</a><br>
+    <a href="{{ url_for('show_jinja_class')}}">To class</a><br>
+    <a href="{{ url_for('item_list')}}">To class</a><br>
+    <a href="{{ url_for('show_for_list')}}">(dynamic)商品一覧へ</a><br>
+    <a href="{{ url_for('show_jinja_if')}}">ifelse</a><br>
+{% endblock %}
+
+
+{% block footer %}{% endblock %}
