@@ -84,6 +84,12 @@ def show_jinja_if(target="colorless"):
     return render_template('jinja/if_else.html', color=target)
 
 
+@app.route("/filter")
+def show_filter_block():
+    word = 'pen'
+    return render_template('filter/block.html', show_word=word)
+
+
 if __name__ == '__main__':
 
     app.run(port=8080)
