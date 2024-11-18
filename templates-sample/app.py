@@ -1,5 +1,5 @@
-from flask import Flask, render_template
-
+from flask import Flask, render_template, abort
+from werkzeug.exceptions import NotFound
 app = Flask(__name__)
 
 
@@ -113,6 +113,18 @@ def show_my_filter():
     word = '寿限無'
     long_word = 'じゅげむじゅげむごこうのすりきれ'
     return render_template('filter/my_filter.html', show_word1=word, show_word2=long_word)
+
+
+@app.errorhandler(NotFound)
+def show_404_page(error):
+    msg = error.description
+    print('エラー内容：', msg)
+    return render_template('errors/404.html'), 404
+
+
+@app.route("/abort")
+def create_exception():
+    abort(401, 'No Page or File!!!')
 
 
 if __name__ == '__main__':
