@@ -107,11 +107,13 @@ def str_truncate(value, length=10):
     else:
         return value
 
+
 @app.route("/filter3")
 def show_my_filter():
     word = '寿限無'
     long_word = 'じゅげむじゅげむごこうのすりきれ'
     return render_template('filter/my_filter.html', show_word1=word, show_word2=long_word)
+
 
 if __name__ == '__main__':
 
