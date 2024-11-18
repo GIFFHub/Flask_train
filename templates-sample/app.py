@@ -89,6 +89,29 @@ def show_filter_block():
     word = 'pen'
     return render_template('filter/block.html', show_word=word)
 
+@app.route("/filter2")
+def show_filter_variable():
+    momo = Hero('momotaro', 25)
+    kinta = Hero('kintaro', 35)
+    ura = Hero('urasimataro', 45)
+    kagu = Hero('kaguyahime', 55)
+    kasa = Hero('kasazizo', 65)
+
+    hero_list = [momo, kinta, ura, kagu, kasa]
+    return render_template('filter/filter_list.html', heroes = hero_list)
+
+@app.template_filter('truncate')
+def str_truncate(value, length=10):
+    if len(value) > length:
+        return value[:length] + "..."
+    else:
+        return value
+
+@app.route("/filter3")
+def show_my_filter():
+    word = '寿限無'
+    long_word = 'じゅげむじゅげむごこうのすりきれ'
+    return render_template('filter/my_filter.html', show_word1=word, show_word2=long_word)
 
 if __name__ == '__main__':
 

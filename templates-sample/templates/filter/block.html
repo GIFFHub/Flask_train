@@ -4,9 +4,9 @@
 
 {% block content %}
     <p> No filter </p>
-    this is a {{ show_word }}.
+        this is a {{ show_word }}.
     <p> filter </p>
-    {% filter upper %}
+    {% filter title %}
         this is a {{ show_word }}.
     {% endfilter %}
 {% endblock %}
