@@ -5,6 +5,16 @@
 {% endblock %}
 
 {% block content %}
+    <div style="color:red;">
+        {% if form.errors %}
+        <ul>
+            =====エラーメッセージ=====
+            {% for k, v in form.errors.items() %}
+                <li>{{k}}:{{v}}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
     <form method="post">
         {{ form.name.label }}{{ form.name(size=20)}} <br>
         {{ form.age.label }}{{ form.age()}}<br>
@@ -13,7 +23,6 @@
         {{ form.email.label }}{{ form.email(placeholder="xxx@example.com")}}<br>
         {{ form.birthday.label }}{{ form.birthday()}}<br>
         {{ form.gender.label }}{{ form.gender()}}<br>
-
         {{ form.area.label }}{{ form.area()}}<br>
         {{ form.is_married.label }}{{form.is_married()}}<br>
         {{ form.note.label }} {{ form.note(style="height:100px;width:150px")}}<br>
