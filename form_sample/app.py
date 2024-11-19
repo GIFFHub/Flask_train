@@ -1,12 +1,12 @@
 from flask import Flask, request
 
-app = Flask(__name__)
-
-
 @app.route("/get")
 def do_get():
     name = request.args.get('name')
     return f'ハロー、{name}さん！'
+
+
+app = Flask(__name__)
 
 
 @app.route('/', methods=['GET', 'POST'])
