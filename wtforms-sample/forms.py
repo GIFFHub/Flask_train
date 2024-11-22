@@ -21,7 +21,7 @@ class UserInfoForm(Form):
     area = SelectField('出身地域：', choices= [('est', '東日本'), ('west', '西日本')])
     is_married = BooleanField('既婚？：')
     note = TextAreaField('備考：')
-    submit = SubmitField('送信')
+    submit = SubmitField('送信します')
 
 
 
