@@ -1,8 +1,9 @@
 from flask import Flask, render_template, session, redirect, url_for
 import os
 from forms import InputForm
-app = Flask(__name__)
 
+
+app = Flask(__name__)
 app.config['SECRET_KEY'] = os.urandom(24)
 
 
